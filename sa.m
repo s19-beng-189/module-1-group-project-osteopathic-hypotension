@@ -2,7 +2,7 @@
 clear all % clear all variables
 clf       % and figures
 global T TS TMAX QMAX;
-global Rs Csa dt rl ru;
+global Rs Csa dt Rl Ru;
 in_sa %initialization
 Csa=Csa/2
 for klok=1:klokmax
