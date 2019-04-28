@@ -2,21 +2,30 @@
 clear all % clear all variables
 clf       % and figures
 global T TS TMAX QMAX;
-global Rs Csa dt rl ru;
+global Rs dt Rl Ru;
 in_sa %initialization
-Csa=Csa/2
+
 for klok=1:klokmax
-  t=klok*dt;
-  QAo=QAo_now(t);
-  [Vl Vu] = V(t);
-  Psa=Psa_new(Psa,QAo); %new Psa overwrites old
+  t   = klok*dt;
+  [Rs, Rl, Ru]  = Rs_new(Rl,Ru,t);
+  tc  = rem(t,T);
+  if (tc > T)
+      F = F_now(Rs,Psa);
+      T = 1/F;
+      TS   = 0.4*T;        % Duration of systole   (minutes)
+      TMAX = 0.4*TS;       % Time at which flow is max (minutes)
+  end
+  QAo = QAo_now(t);
+  [Vl, Vu] = V(t);
+  Psa =Psa_new(Psa,QAo); %new Psa overwrites old
   %Store values in arrays for future plotting:
-  t_plot(klok)=t;
+  t_plot(klok)  =t;
   QAo_plot(klok)=QAo;
   Psa_plot(klok)=Psa;
   V1_plot(klok) = Vl;
   Vu_plot(klok) = Vu;
 end
+
 %Now plot results in one figure 
 %with QAo(t) in upper frame
 % and Psa(t) in lower frame

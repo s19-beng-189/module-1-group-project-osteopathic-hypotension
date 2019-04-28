@@ -1,4 +1,4 @@
-function F = F_now(V,Rs)
-global Csa Csv CR
-F = (P_sp*Csv)/(Rs*CR*(V-Csa*P_sp));
+function F = F_now(Rs,Psa)
+global Csa Csv CR V0
+F = (Psa*Csv)/(Rs*CR*(V0-Csa*Psa));
 end
