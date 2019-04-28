@@ -3,7 +3,9 @@ T =0.0125    %Duration of heartbeat (minutes)
 TS=0.0050    %Duration of systole   (minutes)
 TMAX=0.0020  %Time at which flow is max (minutes)
 QMAX=28.0    %Max flow through aortic valve (liters/minute)
-Rs=17.86     %Systemic resistance (mmHg/(liter/minute))
+Rl= (175/4)     %Intial Upper systemic Resisitance
+Ru= (175/6)    %Initial Lower systemic Resistance 
+%Rs=17.86     %Systemic resistance (mmHg/(liter/minute))
 Csa=0.00175  %Systemic arterial compliance (liters/(mmHg))
 %This value of Csa is approximate and will need adjustment 
 %to make the blood pressure be 120/80.
