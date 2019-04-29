@@ -27,6 +27,7 @@ for klok=1:klokmax
   QAo_plot(klok)=QAo;
   Psa_plot(klok)=Psa;
   T_plot(klok) = T;
+  Rs_plot(klok) = Rs;
 end
 
 %Now plot results in one figure 
@@ -34,4 +35,4 @@ end
 % and Psa(t) in lower frame
 subplot(3,1,1), plot(t_plot,QAo_plot)
 subplot(3,1,2), plot(t_plot,Psa_plot)
-subplot(3,1,3), plot(t_plot,T_plot)
+subplot(3,1,3), plot(t_plot,Rs_plot)
