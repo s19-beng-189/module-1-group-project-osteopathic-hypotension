@@ -9,11 +9,15 @@ for klok=1:klokmax
   t   = klok*dt;
   [Rs, Ru]  = Rs_new(Ru,Rl,t,Tstand);
   tc  = rem(t,T);
-  if (tc == 0)
+  if (tc < dt)
       F = F_now(Rs,Psa,Csa, Csv, CR, V0);
-      T = 1/F;
+      T = 1/F
       TS   = 0.4*T;        % Duration of systole   (minutes)
       TMAX = 0.4*TS;       % Time at which flow is max (minutes)
+  end
+  tc2 = rem(t,Tstand+1);
+  if (tc2<dt)
+      QMAX = 1.5*QMAX
   end
   QAo = QAo_now(t);
   [Vl, Vu] = V(QAo,t);
@@ -22,7 +26,7 @@ for klok=1:klokmax
   t_plot(klok)  =t;
   QAo_plot(klok)=QAo;
   Psa_plot(klok)=Psa;
-  F_plot(klok) = F;
+  T_plot(klok) = T;
 end
 
 %Now plot results in one figure 
@@ -30,4 +34,4 @@ end
 % and Psa(t) in lower frame
 subplot(3,1,1), plot(t_plot,QAo_plot)
 subplot(3,1,2), plot(t_plot,Psa_plot)
-subplot(3,1,3), plot(t_plot,F_plot)
+subplot(3,1,3), plot(t_plot,T_plot)

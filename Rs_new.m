@@ -4,6 +4,7 @@ if t>=Tstand
     Rl=(2/3)*Rl_old;
 else
     Rl=Rl_old;
+    
 end
 Rs =(Rl*Ru_old)/(Rl+Ru_old);
 Rl_new = Rl;
