@@ -1,4 +1,3 @@
-function F = F_now(Rs,Psa)
-global Csa Csv CR V0
-F = (Psa*Csv)/(Rs*CR*(V0-Csa*Psa));
+function F = F_now(Rs,Psa,Csa, Csv, CR, V0)
+F = (100*Csv)/(Rs*CR*(V0-Csa*100));
 end
