@@ -11,9 +11,10 @@ Ru      = (178.6/6);      % Initial Lower systemic Resistance (mmHg/(liter/minut
 Csa     = 0.0012;      % Systemic arterial compliance (liters/(mmHg))
 Csv     = 1.75;         % Systemic venous compliance (liters/mmHg)
 CR      = 0.0365;       % Max (diastolic) value of Compliance of Right Heart (liters/mmHg)
-dt      = 0.000075;     % Time step duration (minutes). Optimized for < 1% error
+dt      = 0.0001;       % Time step duration (minutes)
 klokmax = round(10/dt); % Total number of timesteps adjusted to equal 10 min
-Psa     = 80;           % Set Point Psa (mmHg)
+Psp     = 80;           % Set Point Psa (mmHg)
+Psa     = 80;           %initial Psa
 F=0;
 %Initialize arrays to store data for plotting:
 t_plot = zeros(1,klokmax);
