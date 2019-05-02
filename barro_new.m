@@ -2,7 +2,7 @@ function [F_new, Psv_new, Rs_new] = barro_new(F, SP, t)
 % Baroreceptor Loop Function: Senses deviations from normal Psa values and
 % adjusts Heart Rate, Systemic Resistance Systemic and Venous Pressure through SNS pathway
 global Psv Rs Tstand;
-thr_SP = 140;          % Keep regulating until threshold systolic pressure is reached
+thr_SP = 97;          % Keep regulating until threshold systolic pressure is reached
 lag    =  1;           % delay in min
 alphaF =  0.05;        % Recovery Rate Constant for Heart Rate
 alphaP =  0.0005;      % Recovery Rate Constant for Psv
