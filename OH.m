@@ -1,6 +1,6 @@
 %filename: sa.m
-clear all % clear all variables
-clf       % and figures
+clear  % clear all variables
+clf    % and figures
 global T TS TMAX Tstand;
 global Psv Rs Csa dt;
 in_sa           % Initialize Parameters
@@ -63,8 +63,9 @@ x1 = 100*ones(length(t_SP));
 x2 = 70*ones(length(t_SP));
 
 subplot(2,1,1)
-plot(t_SP, SP_plot,t_DP, DP_plot,t_SP,x1,'k',t_SP,x2,'k','LineWidth',1.5)
+plot(t_SP, SP_plot,t_DP, DP_plot,t_SP,x1,'--k',t_SP,x2,'--k','LineWidth',1.5)
 xlabel('Time (min)','FontSize',14), ylabel('Psa (mmHg)','FontSize',14)
+legend('Systolic Pressure','Diastolic Pressure','FontSize',14)
 subplot(2,1,2)
 plot(t_plot, SV_plot,'LineWidth',1.5)
 xlabel('Time (min)','FontSize',14), ylabel('Stroke Volume (L)','FontSize',14)

@@ -1,6 +1,6 @@
-function Q = QAo_now(t)
+function Q = QAo_now(t,QMAX)
 %filename: QAo_now.m
-global T TS TMAX QMAX;
+global T TS TMAX;
 tc=rem(t,T); % tc=time elapsed since 
 %the beginning of the current cycle
 %rem(t,T) is the remainder when t is divided by T
