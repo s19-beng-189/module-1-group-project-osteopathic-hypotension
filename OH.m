@@ -16,7 +16,7 @@ for klok=1:klokmax
       
       period = round(T/dt);                 % Time steps in current cycle
       SP = max(Psa_plot(klok-period:klok)); % Systolic Pressure of last cycle
-      if SP < 100 || reg         % Activate Barroreceptor Loop When SP drops by 20 mmHg or DP drops by 10 mmHg
+      if SP < 120 || reg         % Activate Barroreceptor Loop When SP drops by 20 mmHg or DP drops by 10 mmHg (Adjust based on experiment)
         [F, Psv, Rs] = barro_new(F, SP, t); % Activates Barroreceptor Loop
         reg = 1;  %keep regulating until 120/80
         trig = t; %time of signal response 
@@ -58,9 +58,9 @@ subplot(3,1,3), plot(t_plot,Rs_plot,'LineWidth',1.5)
 xlabel('Time (min)','FontSize',14), ylabel('Rs','FontSize',14)
 
 figure(2)
-%Reference Lines:
-x1 = 100*ones(length(t_SP));
-x2 = 70*ones(length(t_SP));
+%Reference Lines: %Adjust based on Experiment
+x1 = 120*ones(length(t_SP));
+x2 = 50*ones(length(t_SP));
 
 subplot(2,1,1)
 plot(t_SP, SP_plot,t_DP, DP_plot,t_SP,x1,'--k',t_SP,x2,'--k','LineWidth',1.5)
