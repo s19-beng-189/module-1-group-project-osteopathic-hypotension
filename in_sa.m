@@ -3,6 +3,7 @@ Rs      = 17.86;        % Systemic resistance (mmHg/(liter/minute))
 %Rl      = (178.6/4);    % Intial Upper systemic Resisitance (mmHg/(liter/minute))
 %Ru      = (178.6/6);    % Initial Lower systemic Resistance (mmHg/(liter/minute))
 Csa     = 0.00105;      % Systemic arterial compliance (liters/(mmHg))
+Csa     = Csa/2 %test age
 Csv     = 2.5874;       % Systemic venous compliance (liters/mmHg)
 CR      = 0.0365;       % Diastolic Compliance of Right Heart (liters/mmHg)
 dt      = 0.0001;       % Time step duration (minutes)
